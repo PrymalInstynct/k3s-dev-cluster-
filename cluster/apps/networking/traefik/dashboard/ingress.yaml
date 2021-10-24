@@ -27,8 +27,3 @@ spec:
                 name: traefik
                 port:
                   number: 9000
-        middlewares:
-          test-ipwhitelist:
-            ipWhiteList:
-              sourceRange:
-                - "97.121.140.68"
