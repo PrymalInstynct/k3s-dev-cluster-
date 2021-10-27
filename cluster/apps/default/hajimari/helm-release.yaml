@@ -16,6 +16,9 @@ spec:
         name: hajimari-charts
         namespace: flux-system
       interval: 5m
+  dependsOn:
+    - name: nfs-provisioner
+      namespace: storage
   values:
     image:
       repository: ghcr.io/toboshii/hajimari
