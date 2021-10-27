@@ -31,10 +31,11 @@ spec:
       create: true
       defaultClass: true
       name: nfs-client
-      allowVolumeExpansion: true
+      allowVolumeExpansion: false
       reclaimPolicy: Retain
       archiveOnDelete: true
       accessModes: ReadWriteOnce
+      volumeBindingMode: WaitForFirstConsumer
       annotations: {}
     leaderElection:
       enabled: true
