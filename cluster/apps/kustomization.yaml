@@ -4,5 +4,6 @@ resources:
   - storage
   - default
   - kube-system
+  - minecraft
   - networking
   - system-upgrade
