@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: minecraft-config
+  name: minecraft-proxy-config
   namespace: minecraft
 spec:
   accessModes:
