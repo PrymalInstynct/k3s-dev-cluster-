@@ -160,7 +160,7 @@ spec:
       # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
       removeOldMods: false
       # Check accounts against Minecraft account service.
-      onlineMode: true
+      onlineMode: false
       # If you adjust this, you may need to adjust resources.requests above to match.
       memory: 1024M
       # General JVM options to be passed to the Minecraft server invocation
@@ -229,9 +229,19 @@ spec:
     ##
     extraEnv: {}
     persistence:
-      data:
+      ## minecraft data Persistent Volume Storage Class
+      ## If defined, storageClassName: <storageClass>
+      ## If set to "-", storageClassName: "", which disables dynamic provisioning
+      ## If undefined (the default) or set to null, no storageClassName spec is
+      ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+      ##   GKE, AWS & OpenStack)
+      ##
+      # storageClass: "-"
+      dataDir:
+        # Set this to false if you don't care to persist state between restarts.
         enabled: true
-        existingClaim: minecraft-config
+        # existingClaim: nil
+        Size: 5Gi
     podAnnotations:
       configmap.reloader.stakater.com/reload: "minecraft-settings"
     deploymentAnnotations: {}
