@@ -111,7 +111,7 @@ spec:
       serviceType: LoadBalancer
       ## Set the port used if the serviceType is NodePort
       # nodePort:
-      loadBalancerIP: 10.10.10.82
+      loadBalancerIP: 10.10.10.81
       # loadBalancerSourceRanges: []
       ## Set the externalTrafficPolicy in the Service to either Cluster or Local
       # externalTrafficPolicy: Cluster
@@ -138,7 +138,7 @@ spec:
        servers:
          lobby:
            motd: '&1Just another BungeeCord - Forced Host'
-           address: vanilla-minecraft-minecraft:25565
+           address: vanilla-minecraft-minecraft.minecraft.svc.cluster.local:25565
            restricted: false
        listeners:
        - query_port: 25577
@@ -169,11 +169,11 @@ spec:
        inject_commands: false
       rcon:
         # If you enable this, make SURE to change your password below.
-        enabled: true
+        enabled: false
         port: 25575
         password: "CHANGEME!"
         serviceType: LoadBalancer
-        loadBalancerIP: 10.10.10.82
+        loadBalancerIP:
         # loadBalancerSourceRanges: []
         ## Set the externalTrafficPolicy in the Service to either Cluster or Local
         # externalTrafficPolicy: Cluster
