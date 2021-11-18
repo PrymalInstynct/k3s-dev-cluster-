@@ -50,11 +50,25 @@
       ],
       "datasourceTemplate": "helm"
     },
+    // regexManager to read and process Splunk Operator CRD's
+    {
+      "fileMatch": [
+        "cluster/crds/splunk/.+\\.yaml$"
+      ],
+      "datasourceTemplate": "github-releases"
+    },
   ],
   "packageRules": [
     // setup datasources
+    // global helm datasource settings
     {
       "matchDatasources": ["helm"],
+      "separateMinorPatch": true,
+      "ignoreDeprecated": true
+    },
+    // global github-release datasource settings
+    {
+      "matchDatasources": ["github-releases"],
       "separateMinorPatch": true,
       "ignoreDeprecated": true
     },
@@ -94,6 +108,21 @@
     },
     {
       "matchDatasources": ["helm"],
+      "matchUpdateTypes": ["patch"],
+      "labels": ["renovate/helm", "dep/patch"]
+    },
+    {
+      "matchDatasources": ["github-releases"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["renovate/helm", "dep/major"]
+    },
+    {
+      "matchDatasources": ["github-releases"],
+      "matchUpdateTypes": ["minor"],
+      "labels": ["renovate/helm", "dep/minor"]
+    },
+    {
+      "matchDatasources": ["github-releases"],
       "matchUpdateTypes": ["patch"],
       "labels": ["renovate/helm", "dep/patch"]
     }
