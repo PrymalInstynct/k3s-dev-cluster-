@@ -19,12 +19,4 @@ spec:
   dependsOn:
     - name: nfs-provisioner
       namespace: storage
-  values:
-    image: busybox
-    imageTag: latest
-    resources:
-      requests:
-        memory: 128Mi
-        cpu: 100m
-    # upgrade strategy type (e.g. Recreate or RollingUpdate)
-    strategyType: Recreate
+
