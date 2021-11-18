@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://prymalinstynct.github.io/helm-charts
       chart: busybox-chart
-      version: 0.1.16
+      version: 0.1.17
       sourceRef:
         kind: HelmRepository
         name: prymalinstynct-charts
