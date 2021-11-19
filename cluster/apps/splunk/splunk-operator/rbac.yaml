@@ -74,6 +74,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: splunk-operator
+  namespace: splunk-dev
 roleRef:
   kind: ClusterRole
   name: splunk:operator:namespace-manager
