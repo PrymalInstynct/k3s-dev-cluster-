@@ -21,6 +21,8 @@ spec:
     storageCapacity: 10Gi
   varVolumeStorageConfig:
     storageCapacity: 100Gi
-  defaults: |-
-    splunk:
-      http_enableSSL: 1
+  volumes:
+    - name: defaults
+      configMap:
+        name: splunk-defaults
+  defaultsUrl: /tmp/defaults/default.yml
