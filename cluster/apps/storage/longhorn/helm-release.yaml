@@ -144,10 +144,7 @@ spec:
       #   operator: "Equal"
       #   value: "value"
       #   effect: "NoSchedule"
-      nodeSelector:
-        - kubernetes.io/hostname: "k8s-6"
-        - kubernetes.io/hostname: "k8s-7"
-        - kubernetes.io/hostname: "k8s-8"
+      nodeSelector: {}
 
     longhornDriver:
       priorityClass: ~
@@ -158,10 +155,7 @@ spec:
       #   operator: "Equal"
       #   value: "value"
       #   effect: "NoSchedule"
-      nodeSelector:
-        - kubernetes.io/hostname: "k8s-6"
-        - kubernetes.io/hostname: "k8s-7"
-        - kubernetes.io/hostname: "k8s-8"
+      nodeSelector: {}
 
     longhornUI:
       priorityClass: ~
@@ -172,10 +166,7 @@ spec:
       #   operator: "Equal"
       #   value: "value"
       #   effect: "NoSchedule"
-      nodeSelector:
-        - kubernetes.io/hostname: "k8s-6"
-        - kubernetes.io/hostname: "k8s-7"
-        - kubernetes.io/hostname: "k8s-8"
+      nodeSelector: {}
 
     resources: {}
       # We usually recommend not to specify default resources and to leave this as a conscious
