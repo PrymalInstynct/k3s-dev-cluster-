@@ -5,7 +5,7 @@ resources:
   - storage
   - default
   - kube-system
-  # - minecraft
+  - minecraft
   - networking
   - system-upgrade
   - splunk
