@@ -5,4 +5,5 @@ resources:
   - cert-manager
   - kube-system
   - metallb-system
+  - splunk-operator
   - system-upgrade
