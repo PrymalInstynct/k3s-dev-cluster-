@@ -72,6 +72,7 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: splunk:operator:namespace-manager
+  namespace: splunk-dev
 subjects:
   - kind: ServiceAccount
     name: splunk-operator
