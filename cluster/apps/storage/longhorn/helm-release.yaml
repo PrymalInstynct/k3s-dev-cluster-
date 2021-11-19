@@ -209,6 +209,7 @@ spec:
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-production"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        traefik.ingress.kubernetes.io/router.middlewares: "networking-basic-auth@basic-auth-secret"
 
       secrets:
       ## If you're providing your own certificates, please use this to add the certificates as secrets
