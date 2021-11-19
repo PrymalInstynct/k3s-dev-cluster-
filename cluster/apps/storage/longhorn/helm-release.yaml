@@ -71,7 +71,7 @@ spec:
         nodePort: ""
 
     persistence:
-      defaultClass: true
+      defaultClass: false
       defaultFsType: ext4
       defaultClassReplicaCount: 3
       reclaimPolicy: Delete
@@ -144,11 +144,10 @@ spec:
       #   operator: "Equal"
       #   value: "value"
       #   effect: "NoSchedule"
-      nodeSelector: {}
-      ## If you want to set node selector for Longhorn Manager DaemonSet, delete the `{}` in the line above
-      ## and uncomment this example block
-      #  label-key1: "label-value1"
-      #  label-key2: "label-value2"
+      nodeSelector:
+        - kubernetes.io/hostname: "k8s-6"
+        - kubernetes.io/hostname: "k8s-7"
+        - kubernetes.io/hostname: "k8s-8"
 
     longhornDriver:
       priorityClass: ~
@@ -159,11 +158,10 @@ spec:
       #   operator: "Equal"
       #   value: "value"
       #   effect: "NoSchedule"
-      nodeSelector: {}
-      ## If you want to set node selector for Longhorn Driver Deployer Deployment, delete the `{}` in the line above
-      ## and uncomment this example block
-      #  label-key1: "label-value1"
-      #  label-key2: "label-value2"
+      nodeSelector:
+        - kubernetes.io/hostname: "k8s-6"
+        - kubernetes.io/hostname: "k8s-7"
+        - kubernetes.io/hostname: "k8s-8"
 
     longhornUI:
       priorityClass: ~
@@ -174,11 +172,10 @@ spec:
       #   operator: "Equal"
       #   value: "value"
       #   effect: "NoSchedule"
-      nodeSelector: {}
-      ## If you want to set node selector for Longhorn UI Deployment, delete the `{}` in the line above
-      ## and uncomment this example block
-      #  label-key1: "label-value1"
-      #  label-key2: "label-value2"
+      nodeSelector:
+        - kubernetes.io/hostname: "k8s-6"
+        - kubernetes.io/hostname: "k8s-7"
+        - kubernetes.io/hostname: "k8s-8"
 
     resources: {}
       # We usually recommend not to specify default resources and to leave this as a conscious
@@ -205,7 +202,7 @@ spec:
 
       ## Set this to true in order to enable TLS on the ingress record
       ## A side effect of this will be that the backend service will be connected at port 443
-      tls: false
+      tls: true
 
       ## If TLS is set to true, you must declare what secret will store the key/certificate for TLS
       tlsSecret: longhorn.local-tls
