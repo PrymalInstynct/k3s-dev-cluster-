@@ -7,3 +7,4 @@ resources:
   - minecraft
   - networking
   - system-upgrade
+  - splunk

@@ -1,0 +1,27 @@
+apiVersion: enterprise.splunk.com/v1
+kind: Standalone
+metadata:
+  name: standalone-dev 
+  namespace: splunk-dev
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
+  labels:
+    app: SplunkStandalone
+    type: Splunk
+spec:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "0.1"
+    limits:
+      memory: "8Gi"
+      cpu: "4"
+  image: docker.io/splunk/splunk:8.2.2
+  imagePullPolicy: "Always"
+  etcVolumeStorageConfig:
+    storageCapacity: 10Gi
+  varVolumeStorageConfig:
+    storageCapacity: 100Gi
+  defaults: |-
+    splunk:
+      http_enableSSL: 1
