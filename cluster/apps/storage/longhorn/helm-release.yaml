@@ -65,7 +65,7 @@ spec:
     service:
       ui:
         type: ClusterIP
-        nodePort: null
+        nodePort: 8000
       manager:
         type: ClusterIP
         nodePort: ""
