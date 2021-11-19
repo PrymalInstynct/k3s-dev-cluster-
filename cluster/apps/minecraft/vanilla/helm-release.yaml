@@ -160,7 +160,7 @@ spec:
       # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
       removeOldMods: false
       # Check accounts against Minecraft account service.
-      onlineMode: true
+      onlineMode: false
       # If you adjust this, you may need to adjust resources.requests above to match.
       memory: 1024M
       # General JVM options to be passed to the Minecraft server invocation
