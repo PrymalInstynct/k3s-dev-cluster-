@@ -31,4 +31,11 @@ spec:
         - name: OPERATOR_NAME
           value: "splunk-operator"
         - name: RELATED_IMAGE_SPLUNK_ENTERPRISE
-          value: "docker.io/splunk/splunk:latest"
+          value: "docker.io/splunk/splunk:8.2.2"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "0.1"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
