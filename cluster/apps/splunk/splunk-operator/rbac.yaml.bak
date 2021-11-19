@@ -1,0 +1,82 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: splunk-operator
+  namespace: splunk-dev
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: null
+  name: splunk:operator:namespace-manager
+  namespace: splunk-dev
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - endpoints
+      - persistentvolumeclaims
+      - configmaps
+      - secrets
+      - pods
+      - pods/exec
+      - serviceaccounts
+    verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+      - daemonsets
+      - replicasets
+      - statefulsets
+    verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - enterprise.splunk.com
+    resources:
+      - '*'
+      - indexerclusters
+      - clustermasters
+      - licensemasters
+      - searchheadclusters
+      - standalones
+    verbs:
+      - '*'
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: splunk:operator:namespace-manager
+  namespace: splunk-dev
+subjects:
+  - kind: ServiceAccount
+    name: splunk-operator
+roleRef:
+  kind: Role
+  name: splunk:operator:namespace-manager
+  apiGroup: rbac.authorization.k8s.io
