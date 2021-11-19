@@ -1,10 +1,11 @@
+---
 apiVersion: enterprise.splunk.com/v1
 kind: Standalone
 metadata:
-  name: standalone-dev 
+  name: standalone-dev
   namespace: splunk-dev
   finalizers:
-  - enterprise.splunk.com/delete-pvc
+    - enterprise.splunk.com/delete-pvc
   labels:
     app: SplunkStandalone
     type: Splunk
