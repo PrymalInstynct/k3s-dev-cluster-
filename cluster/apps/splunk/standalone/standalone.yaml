@@ -19,8 +19,10 @@ spec:
       cpu: "4"
   etcVolumeStorageConfig:
     storageCapacity: 10Gi
+    storageClassName: longhorn
   varVolumeStorageConfig:
     storageCapacity: 100Gi
+    storageClassName: longhorn
   volumes:
     - name: defaults
       configMap:
