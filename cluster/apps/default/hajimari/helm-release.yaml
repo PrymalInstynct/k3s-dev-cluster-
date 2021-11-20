@@ -61,7 +61,7 @@ spec:
         - name: Media
           links:
             - name: Spotify
-              url: "http://opem.spotify.com"
+              url: "http://open.spotify.com"
             - name: YouTube
               url: "https://youtube.com/feed/subscriptions"
         - name: Tech
