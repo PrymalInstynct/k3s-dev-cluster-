@@ -6,6 +6,6 @@ resources:
   - metallb-system.yaml
   - minecraft.yaml
   - networking.yaml
-  - splunk-cluster-dev.yaml
-  - splunk-standalone-dev.yaml
+  # - splunk-cluster-dev.yaml
+  # - splunk-standalone-dev.yaml
   - storage.yaml
