@@ -210,7 +210,7 @@ spec:
         cert-manager.io/cluster-issuer: "letsencrypt-production"
         hajimari.io/appName: "longhorn"
         hajimari.io/enable: "true"
-        hajimari.io/icon: "web"
+        hajimari.io/icon: "database"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "networking-basic-auth@kubernetescrd"
 
