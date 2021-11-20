@@ -41,8 +41,11 @@ spec:
         - name: Longhorn-Dev
           url: https://longhorn.${SECRET_DOMAIN}:8443
           icon: "database"
-        - name: Splunk-Dev
+        - name: Splunk-Standalone
           url: https://splunk.${SECRET_DOMAIN}:8443
+          icon: "table-search"
+        - name: Splunk-Cluster
+          url: https://cluster.${SECRET_DOMAIN}:8443
           icon: "table-search"
       groups:
         - name: Useful

@@ -9,4 +9,4 @@ resources:
   - networking
   - system-upgrade
   # - splunk-cluster
-  - splunk-standalone
+  # - splunk-standalone
