@@ -100,7 +100,7 @@ data:
       kvstore:
         port: 8191
       launch: {}
-      license_download_dest: /tmp/splunk.lic
+      license_download_dest: /tmp/licenses/splunk.lic
       license_master_url: ''
       multisite_master_port: 8089
       multisite_replication_factor_origin: 2

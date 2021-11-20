@@ -29,7 +29,7 @@ spec:
     - name: licenses
       configMap:
         name: splunk-licenses
-  licenseUrl: /tmp/splunk.lic
+  licenseUrl: /tmp/licenses/splunk.lic
   defaultsUrl: /tmp/defaults/default.yml
 ---
 apiVersion: enterprise.splunk.com/v2
