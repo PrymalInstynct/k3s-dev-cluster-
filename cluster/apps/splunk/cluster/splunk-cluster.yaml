@@ -9,7 +9,6 @@ metadata:
 spec:
   clusterMasterRef:
     name: cm-dev
-  storageClassName: longhorn
   resources:
     requests:
       memory: "512Mi"
@@ -17,6 +16,12 @@ spec:
     limits:
       memory: "8Gi"
       cpu: "4"
+  etcVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 15Gi
+  varVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 25Gi
   volumes:
     - name: defaults
       configMap:
@@ -37,7 +42,6 @@ metadata:
 spec:
   licenseMasterRef:
     name: lm-dev
-  storageClassName: longhorn
   resources:
     requests:
       memory: "512Mi"
@@ -45,6 +49,12 @@ spec:
     limits:
       memory: "8Gi"
       cpu: "4"
+  etcVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 15Gi
+  varVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 25Gi
   volumes:
     - name: defaults
       configMap:
@@ -61,8 +71,6 @@ metadata:
 spec:
   clusterMasterRef:
     name: cm-dev
-  storageClassName: longhorn
-  varStorage: "128Gi"
   resources:
     requests:
       memory: "512Mi"
@@ -70,6 +78,8 @@ spec:
     limits:
       memory: "8Gi"
       cpu: "4"
+  storageClassName: longhorn
+  varStorage: "128Gi"
   volumes:
     - name: defaults
       configMap:
@@ -86,7 +96,6 @@ metadata:
 spec:
   clusterMasterRef:
     name: cm-dev
-  storageClassName: longhorn
   resources:
     requests:
       memory: "512Mi"
@@ -94,6 +103,12 @@ spec:
     limits:
       memory: "8Gi"
       cpu: "4"
+  etcVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 15Gi
+  varVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 25Gi
   volumes:
     - name: defaults
       configMap:
