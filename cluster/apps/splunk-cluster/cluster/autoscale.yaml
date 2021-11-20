@@ -3,7 +3,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: idx-scale
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
 spec:
   scaleTargetRef:
     apiVersion: enterprise.splunk.com/v2
@@ -17,7 +17,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: sh-scale
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
 spec:
   scaleTargetRef:
     apiVersion: enterprise.splunk.com/v2

@@ -3,7 +3,7 @@ apiVersion: enterprise.splunk.com/v2
 kind: LicenseMaster
 metadata:
   name: lm-dev
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
   finalizers:
   - enterprise.splunk.com/delete-pvc
 spec:
@@ -36,7 +36,7 @@ apiVersion: enterprise.splunk.com/v2
 kind: ClusterMaster
 metadata:
   name: cm-dev
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
   finalizers:
   - enterprise.splunk.com/delete-pvc
 spec:
@@ -65,7 +65,7 @@ apiVersion: enterprise.splunk.com/v2
 kind: IndexerCluster
 metadata:
   name: idx-dev
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
   finalizers:
   - enterprise.splunk.com/delete-pvc
 spec:
@@ -94,7 +94,7 @@ apiVersion: enterprise.splunk.com/v2
 kind: SearchHeadCluster
 metadata:
   name: sh-dev
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
   finalizers:
   - enterprise.splunk.com/delete-pvc
 spec:

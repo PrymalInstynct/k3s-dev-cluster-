@@ -3,7 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cluster-splunk-ingress
-  namespace: splunk-dev
+  namespace: splunk-cluster-dev
   labels:
     app: cluster-splunk-ingress
   annotations:

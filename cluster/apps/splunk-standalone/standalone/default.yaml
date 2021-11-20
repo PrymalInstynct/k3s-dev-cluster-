@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: splunk-cluster-defaults
-  namespace: splunk-dev
+  name: splunk-defaults
+  namespace: splunk-standalone-dev
 data:
   default.yml: |
     ---
