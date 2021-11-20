@@ -30,7 +30,7 @@ spec:
       #     - default
       #     - networking
       #     - storage
-      name: "Development"
+      name: "Prymal:Development"
       customApps:
         - name: Hajimari-Dev
           url: https://hajimari.${SECRET_DOMAIN}:8443
@@ -41,11 +41,18 @@ spec:
         - name: Longhorn-Dev
           url: https://longhorn.${SECRET_DOMAIN}:8443
           icon: "database"
+        - name: Splunk-Dev
+          url: https://splunk.${SECRET_DOMAIN}:8443
+          icon: "table-search"
       groups:
-        - name: Communicate
+        - name: Useful
           links:
-            - name: Discord
-              url: "https://discord.com"
+            - name: Github
+              url: "https://github.com/PrymalInstynct"
+            - name: Cloudflare
+              url: "https://cloudflare.com"
+            - name: A Cloud Guru
+              url: "https://acloudguru.com/#sign-in"
         - name: Google
           links:
             - name: Gmail
@@ -56,7 +63,7 @@ spec:
               url: "https://docs.google.com"
             - name: Sheets
               url: "https://drive.google.com"
-            - name: domains
+            - name: Domains
               url: "https://domains.google.com"
         - name: Media
           links:
@@ -64,7 +71,7 @@ spec:
               url: "http://open.spotify.com"
             - name: YouTube
               url: "https://youtube.com/feed/subscriptions"
-        - name: Tech
+        - name: Tech News
           links:
             - name: The Hacker News
               url: "https://thehackernews.com"
