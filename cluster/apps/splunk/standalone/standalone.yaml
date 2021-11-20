@@ -2,7 +2,7 @@
 apiVersion: enterprise.splunk.com/v2
 kind: Standalone
 metadata:
-  name: standalone-dev-2
+  name: standalone-dev
   namespace: splunk-dev
   finalizers:
     - enterprise.splunk.com/delete-pvc

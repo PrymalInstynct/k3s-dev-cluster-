@@ -24,6 +24,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: splunk-standalone-dev-2-standalone-service
+                name: splunk-standalone-dev-standalone-service
                 port:
                   number: 8000
