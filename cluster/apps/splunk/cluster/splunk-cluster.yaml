@@ -78,8 +78,12 @@ spec:
     limits:
       memory: "8Gi"
       cpu: "4"
-  storageClassName: longhorn
-  varStorage: "128Gi"
+  etcVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 15Gi
+  varVolumeStorageConfig:
+    storageClassName: longhorn
+    storageCapacity: 100Gi
   volumes:
     - name: defaults
       configMap:
