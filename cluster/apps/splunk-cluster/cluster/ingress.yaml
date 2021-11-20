@@ -9,7 +9,7 @@ metadata:
   annotations:
     ingress.kubernetes.io/secure-backends: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    hajimari.io/appName: "splunk-cluster"
+    hajimari.io/appName: "cluster"
     hajimari.io/enable: "true"
     hajimari.io/icon: "table-search"
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"

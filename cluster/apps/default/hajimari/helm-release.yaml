@@ -42,7 +42,7 @@ spec:
           url: https://longhorn.${SECRET_DOMAIN}:8443
           icon: "database"
         - name: Splunk-Standalone
-          url: https://splunk.${SECRET_DOMAIN}:8443
+          url: https://standalone.${SECRET_DOMAIN}:8443
           icon: "table-search"
         - name: Splunk-Cluster
           url: https://cluster.${SECRET_DOMAIN}:8443

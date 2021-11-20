@@ -127,8 +127,8 @@ resource "cloudflare_record" "longhorn" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "splunk" {
-  name    = "splunk"
+resource "cloudflare_record" "standalone" {
+  name    = "standalone"
   zone_id = lookup(data.cloudflare_zones.domain.zones[0], "id")
   value   = "ipv4.${data.sops_file.cloudflare_secrets.data["cloudflare_domain"]}"
   proxied = true
