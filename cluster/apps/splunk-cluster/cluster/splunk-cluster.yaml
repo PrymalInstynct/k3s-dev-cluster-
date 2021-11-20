@@ -22,7 +22,6 @@ spec:
   varVolumeStorageConfig:
     storageClassName: longhorn
     storageCapacity: 25Gi
-  containers:
   volumes:
     - name: defaults
       configMap:
