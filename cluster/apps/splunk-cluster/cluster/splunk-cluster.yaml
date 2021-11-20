@@ -22,6 +22,7 @@ spec:
   varVolumeStorageConfig:
     storageClassName: longhorn
     storageCapacity: 25Gi
+  containers:
   volumes:
     - name: defaults
       configMap:
@@ -29,8 +30,8 @@ spec:
     - name: licenses
       configMap:
         name: splunk-licenses
-  licenseUrl: /tmp/licenses/splunk.lic
-  defaultsUrl: /tmp/defaults/default.yml
+  licenseUrl: /mnt/licenses/enterprise.lic
+  defaultsUrl: /mnt/defaults/default.yml
 ---
 apiVersion: enterprise.splunk.com/v2
 kind: ClusterMaster
