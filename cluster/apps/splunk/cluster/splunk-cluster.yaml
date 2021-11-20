@@ -1,0 +1,101 @@
+---
+apiVersion: enterprise.splunk.com/v2
+kind: LicenseMaster
+metadata:
+  name: lm-dev
+  namespace: splunk-dev
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
+spec:
+  clusterMasterRef:
+    name: cm-dev
+  storageClassName: longhorn
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "0.1"
+    limits:
+      memory: "8Gi"
+      cpu: "4"
+  volumes:
+    - name: defaults
+      configMap:
+        name: splunk-cluster-defaults
+    - name: licenses
+      configMap:
+        name: splunk-licenses
+  licenseUrl: /tmp/splunk.lic
+  defaultsUrl: /tmp/defaults/default.yml
+---
+apiVersion: enterprise.splunk.com/v2
+kind: ClusterMaster
+metadata:
+  name: cm-dev
+  namespace: splunk-dev
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
+spec:
+  licenseMasterRef:
+    name: lm-dev
+  storageClassName: longhorn
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "0.1"
+    limits:
+      memory: "8Gi"
+      cpu: "4"
+  volumes:
+    - name: defaults
+      configMap:
+        name: splunk-cluster-defaults
+  defaultsUrl: /tmp/defaults/default.yml
+---
+apiVersion: enterprise.splunk.com/v2
+kind: IndexerCluster
+metadata:
+  name: idx-dev
+  namespace: splunk-dev
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
+spec:
+  clusterMasterRef:
+    name: cm-dev
+  storageClassName: longhorn
+  varStorage: "128Gi"
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "0.1"
+    limits:
+      memory: "8Gi"
+      cpu: "4"
+  volumes:
+    - name: defaults
+      configMap:
+        name: splunk-cluster-defaults
+  defaultsUrl: /tmp/defaults/default.yml
+---
+apiVersion: enterprise.splunk.com/v2
+kind: SearchHeadCluster
+metadata:
+  name: sh-dev
+  namespace: splunk-dev
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
+spec:
+  clusterMasterRef:
+    name: cm-dev
+  storageClassName: longhorn
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "0.1"
+    limits:
+      memory: "8Gi"
+      cpu: "4"
+  volumes:
+    - name: defaults
+      configMap:
+        name: splunk-cluster-defaults
+  defaultsUrl: /tmp/defaults/default.yml

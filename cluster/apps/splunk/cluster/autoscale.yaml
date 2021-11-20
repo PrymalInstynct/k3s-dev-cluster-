@@ -1,0 +1,28 @@
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: idx-scale
+  namespace: splunk-dev
+spec:
+  scaleTargetRef:
+    apiVersion: enterprise.splunk.com/v2
+    kind: IndexerCluster
+    name: idx-dev
+  minReplicas: 3
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 50
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sh-scale
+  namespace: splunk-dev
+spec:
+  scaleTargetRef:
+    apiVersion: enterprise.splunk.com/v2
+    kind: SearchHeadCluster
+    name: sh-dev
+  minReplicas: 3
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 50
