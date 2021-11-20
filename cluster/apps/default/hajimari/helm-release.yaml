@@ -33,13 +33,13 @@ spec:
       name: "Development"
       customApps:
         - name: Hajimari-Dev
-          url: https://hajimari.prymal.dev:8443
+          url: https://hajimari.${SECRET_DOMAIN}:8443
           icon: "weather-sunset"
         - name: Trafik-Dev
-          url: https://traefik.prymal.dev:8443
+          url: https://traefik.${SECRET_DOMAIN}:8443
           icon: "lan"
         - name: Longhorn-Dev
-          url: https://longhorn.prymal.dev:8443
+          url: https://longhorn.${SECRET_DOMAIN}:8443
           icon: "database"
       groups:
         - name: Communicate
