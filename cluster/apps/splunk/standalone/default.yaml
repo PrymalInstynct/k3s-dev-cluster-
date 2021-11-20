@@ -86,10 +86,10 @@ data:
         port: 8088
         ssl: true
       home: /opt/splunk
-      http_enableSSL: 0
-      http_enableSSL_cert: null
-      http_enableSSL_privKey: null
-      http_enableSSL_privKey_password: null
+      http_enableSSL: 1
+      # http_enableSSL_cert: null
+      # http_enableSSL_privKey: null
+      # http_enableSSL_privKey_password: null
       http_port: 8000
       idxc:
         label: idxc_label
