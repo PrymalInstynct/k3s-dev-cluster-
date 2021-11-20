@@ -18,7 +18,7 @@ spec:
   tls:
     - hosts:
         - "splunk.${SECRET_DOMAIN}"
-      secretName: "standalone-splunk-tls"
+      secretName: "standalone-splunk-ingress-tls"
   rules:
     - host: "splunk.${SECRET_DOMAIN}"
       http:
