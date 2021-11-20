@@ -14,8 +14,8 @@ spec:
       memory: "512Mi"
       cpu: "0.1"
     limits:
-      memory: "8Gi"
-      cpu: "4"
+      memory: "4Gi"
+      cpu: "2"
   etcVolumeStorageConfig:
     storageClassName: longhorn
     storageCapacity: 15Gi
