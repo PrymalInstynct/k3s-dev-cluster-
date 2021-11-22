@@ -4,39 +4,55 @@ metadata:
     name: splunk-licenses
     namespace: splunk-cluster-dev
 data:
-    enterprise.lic: |
-        <?xml version="1.0" encoding="UTF-8"?>
-        <license>
-          <signature>U/oMbnntumWVHqzjgdoQ1LA+TNNyW0mOxUr5ogrfgXgoSarz+SmLoAgpvAesWM77DZ5be8wEEMCHYwc2C2pu8jEmUnmg5Q3XCrF/mPfWqK5PKt9udeyKgpQXAbAZwM6bwEoU+cSW8T5/jeatIflpOzDv7mnor86ByKFhuL8ZjGRp6tpCljOJElISJKUCi2gB8phrjDk6sbCqMTgS9GOP/MoUpAHI52kljRVH4God8DHakjnPNpSOC7PDrxAvKjtoh1Mg/8ADppkI9xIX+SFeKjRDveQCZyuwH4glKSTESmmeGZAtsMeDpDW+wLzee7yA3fAluHW0xW2AWx2ESSQ0yQ==</signature>
-          <payload>
-            <type>enterprise</type>
-            <group_id>Enterprise</group_id>
-            <quota>21474836480</quota>
-            <max_violations>5</max_violations>
-            <window_period>30</window_period>
-            <creation_time>1588748400</creation_time>
-            <label>Splunk Enterprise Term No Enforcement License</label>
-            <expiration_time>2147500799</expiration_time>
-            <features>
-              <feature>Auth</feature>
-              <feature>FwdData</feature>
-              <feature>RcvData</feature>
-              <feature>LocalSearch</feature>
-              <feature>DistSearch</feature>
-              <feature>RcvSearch</feature>
-              <feature>ScheduledSearch</feature>
-              <feature>Alerting</feature>
-              <feature>DeployClient</feature>
-              <feature>DeployServer</feature>
-              <feature>SplunkWeb</feature>
-              <feature>SigningProcessor</feature>
-              <feature>SyslogOutputProcessor</feature>
-              <feature>CanBeRemoteMaster</feature>
-            </features>
-            <optional_features>
-              <feature>DisableQuotaEnforcement</feature>
-            </optional_features>
-            <sourcetypes/>
-            <guid>56C51F1A-80C6-48D9-95D3-D9A82E5EB948</guid>
-          </payload>
-        </license>
+    enterprise.lic: ENC[AES256_GCM,data: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,iv:W5KUsq8uSKOGmFVPdmkC9EhaBtrW8VEAh1E0mN7Z9UQ=,tag:EDZeYbqGq1ywDxse+Xdr2w==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-11-22T12:11:50Z"
+    mac: ENC[AES256_GCM,data:QXzqPoH9neM3YKdKq7+RWXvyU/UPY8ENDGEt/0zGdL6507SbRoAmVE1MKNNTwtHJtbs0PTBHIb1OJQtY2YmPSY07xyS2YD6KQ9nwDDFrdZIL0YE/d9yMkVA007NUJIVKVWEllI4sLinTON7j1VG65gv6XuWIaxZEc6cbuGOJNEE=,iv:GhCnmnYPqPRj39gwEzkILLA5cBup5QoowPiwCmZr/eE=,tag:GhC12clfLN4YTVYXmWGB4w==,type:str]
+    pgp:
+        - created_at: "2021-11-22T12:11:49Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4oVj6E7kUgyARAAnMW+n82GyXLiu2mxZsa/rna0ka8rM14jiqeKeGRo8U/D
+            sVTxDjk8s9F/pMKehvYTkgFh8pZBR0xyMoPnjNVabR6SIcA+zuekvINwli5drH07
+            oV8wmMcjYkila7Oosv26+I1BZaitNojl5NAG+CjdswB6qjG0v6atm5ZX9m9tWI9Q
+            WLgRjNFIG3z4UY3TwTHFPbU3q1hEZ0L9HJjOTnwLnxJpQfbN8pInaCI9N2sXS4qh
+            2tyyNZoxS87jM6M70KI1jNuZfDTk8FIkqISecNsu8wPtPy8vbtaYuNu4ZrKbCQz1
+            FrJZKEuB7IKhk4Lsvle6n8Ym5baeRdVzQqUEXJT0yq2rc6Civ6Y2pLNY87VUiQXn
+            Oz2JxTL0xaBxclvck3QJQQf0abRgNYu8dZtT9jENFhE1Ttyjv19PeacugO6jfvPa
+            y/Sz6FSduE2O5FWH02TqSTgcpfraNtQFRrzvdr6G5SX42t2X6Ow2EmaSCA4Rauth
+            s04QkxQoUWZQ7UrsAn97ugUBBUIGEgeV4iCBv2TsKVcWQc/5iODEkRyh3szxtCIr
+            BM+rejj/tcSQAgk7n9rZbJGKBqsXiN2aotAVn7QNgPo7VWR9U/lvzsxVEHczm7cZ
+            Hia0sXyijJusvuHc4wZxOkwZ8scxn1s3LA6ifXBFHaKJj95LtWGS5d8J3ABqNk7S
+            XgH7As/f1VCMaHKYc6+IJUts3IxQ9g95891jARidva6bFrfeGQp67NH6voYjUoXp
+            JspPrK1twrhFC3lMf+EcJpDGUn0Ev5EBZLdWgjW0vMYnng1ANxWdZVzqluLWRJ4=
+            =+XTs
+            -----END PGP MESSAGE-----
+          fp: 9B9550919B105F83AE76038D92E332A37D3279E9
+        - created_at: "2021-11-22T12:11:49Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA0Z1T5Qq18JXAQ/+M4ZAmgMofkvnZHlNeM0hVRtGBUFYMCwJYluD+rn6G0cW
+            v/XsG8Jz4zL+GHmpzbR99VbBOT4qDGS7XyujPpYTTC0Wxn2vfSFFXqmQP1jLkaMQ
+            OQc54aIXkyBm5/Es4Apx1R327GOVtmlb2NDuQuIFFPAiZ59s51YTcdd41R40Rj1W
+            4+EM0CAmwxjNQfmownS7QQLCQoJA0/qJWkJ0x4FzGwNLhP6MI65zALGztJZMLZhn
+            mj7x7s+eGiRK4lw58R3IL8FAE83seY0BAo1c9K7inMuhsPwD/dVNAUOEArrrxB2m
+            wWXBZXDTLeE2nbwv5nDGuflKd+BdXI/3TfGkFDB1g1HT5VwZOR4KcaJHkZsgWIvt
+            6lR4S0YougNB/lGUl33BpNQeag2LeWZUw7liMZfiUFIOfAzksOkuSWvzYTQkywnx
+            ZaPqUuXJzBquJDqF5b1lCfHRKE/GIceRQ8mYIuDKel7dvpO4ERDQf9KJCJ0MZWA4
+            Ly/5EHwi0bDelZzUuxQ0bFmAyBWKyIB2YQkxeDTE1B/3omxPO3kMPlYKp127gkbZ
+            mPTmQ/UEgKKahNL+3UUW7o0nAnynLlWzokm9+aiFBwYMIbijV/pXnW5ByQLdQpWv
+            TArnG3uzmCuYSPAsRcp6/GPDKv7KJJSHwOva7Dg8CV1yOJbCHEXrXNcmgHIPNw3S
+            XgFQXo+dmt3E6fA/a9j/b6kPxuWsqVaC+kBpuY5TP9qqSgOERgwY9DyTxHkcXNzX
+            3Zi7nREHBL5DAY8KoBFZIkC9uNGRsuPP/y/Mzc7AdFy5TvSI7dZ68eUTJLSFVGo=
+            =ahkr
+            -----END PGP MESSAGE-----
+          fp: ABA7AA0FB42E30E3D6589E083A93AC25EBDFE560
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.1
