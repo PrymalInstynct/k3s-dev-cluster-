@@ -26,5 +26,9 @@ spec:
   volumes:
     - name: defaults
       configMap:
-        name: splunk-defaults
-  defaultsUrl: /tmp/defaults/default.yml
+        name: splunk-cluster-defaults
+    - name: licenses
+      configMap:
+        name: splunk-licenses
+  licenseUrl: /mnt/licenses/enterprise.lic
+  defaultsUrl: /mnt/defaults/default.yml
