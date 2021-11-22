@@ -13,7 +13,7 @@ data:
     cert_prefix: https
     config:
       baked: default.yml
-      defaults_dir: /tmp/defaults
+      defaults_dir: /mnt/defaults
       env:
         headers: null
         var: SPLUNK_DEFAULTS_URL

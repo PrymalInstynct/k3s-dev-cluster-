@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - default.yaml
   - ingress.yaml
+  - license.yaml
   - standalone.yaml
