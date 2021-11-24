@@ -201,9 +201,11 @@ In order to use Terraform and `cert-manager` with the Cloudflare DNS challenge y
 
 4. Verify Ansible can ping your nodes by running `task ansible:adhoc:ping`
 
-5. Finally, run the Ubuntu Prepare playbook by running `task ansible:playbook:ubuntu-prepare`
+5. Security harden your nodes by running `task ansible:playbook:security-harden`
 
-6. If everything goes as planned you should see Ansible running the Ubuntu Prepare Playbook against your nodes.
+6. Finally, run the Ubuntu Prepare playbook by running `task ansible:playbook:ubuntu-prepare`
+
+7. If everything goes as planned you should see Ansible running the Ubuntu Prepare Playbook against your nodes.
 
 ### :sailboat:&nbsp; Installing k3s with Ansible
 
