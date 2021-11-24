@@ -10,7 +10,7 @@ spec:
     kind: IndexerCluster
     name: idx-dev
   minReplicas: 2
-  maxReplicas: 2
+  maxReplicas: 3
   targetCPUUtilizationPercentage: 75
 ---
 apiVersion: autoscaling/v1
@@ -24,5 +24,5 @@ spec:
     kind: SearchHeadCluster
     name: sh-dev
   minReplicas: 2
-  maxReplicas: 2
+  maxReplicas: 3
   targetCPUUtilizationPercentage: 75
