@@ -27,6 +27,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: splunk-cluster-dev-cluster-service
+                name: service/splunk-sh-dev-search-head-service
                 port:
                   number: 8000
