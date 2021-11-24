@@ -71,7 +71,7 @@ metadata:
 spec:
   clusterMasterRef:
     name: cm-dev
-  replicas: 3
+  replicas: 2
   resources:
     requests:
       memory: "512Mi"
@@ -101,7 +101,7 @@ metadata:
 spec:
   clusterMasterRef:
     name: cm-dev
-  replicas: 3
+  replicas: 2
   resources:
     requests:
       memory: "512Mi"
