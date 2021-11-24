@@ -56,7 +56,7 @@
         "cluster/crds/splunk/.+\\.yaml$"
       ],
       "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?)\\/download\\/(?<currentValue>.*?)\\/"
+        "registryUrl=(?<registryUrl>.*?)\\/(?<depName>.*?)\\/releases\\/download\\/(?<currentValue>.*?)\\/"
       ],
       "datasourceTemplate": "github-releases"
     },
