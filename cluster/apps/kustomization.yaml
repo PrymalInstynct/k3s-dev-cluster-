@@ -8,5 +8,5 @@ resources:
   # - minecraft
   - networking
   - system-upgrade
-  # - splunk-cluster
-  # - splunk-standalone
+  - splunk-cluster
+  - splunk-standalone
