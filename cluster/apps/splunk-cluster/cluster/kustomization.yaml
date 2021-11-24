@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - autoscale.yaml
   - default.yaml
-  # - ingress.yaml
+  - ingress.yaml
   - license.yaml
   - splunk-cluster.yaml
