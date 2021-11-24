@@ -111,7 +111,7 @@ spec:
       serviceType: LoadBalancer
       ## Set the port used if the serviceType is NodePort
       # nodePort:
-      loadBalancerIP: 10.10.10.81
+      loadBalancerIP: "${SVC_MINECRAFT_SURVIVAL_ADDR}"
       # loadBalancerSourceRanges: []
       ## Set the externalTrafficPolicy in the Service to either Cluster or Local
       # externalTrafficPolicy: Cluster
