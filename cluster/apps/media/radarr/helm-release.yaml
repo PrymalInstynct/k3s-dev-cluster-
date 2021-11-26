@@ -44,13 +44,13 @@ spec:
           - hosts:
               - "radarr.${SECRET_DOMAIN}"
             secretName: "radarr-tls"
+    podSecurityContext:
+      supplementalGroups:
+        - 100
     persistence:
       config:
         enabled: true
         existingClaim: radarr-config-v1
-    # podSecurityContext:
-    #   supplementalGroups:
-    #     - 100
       media:
         enabled: true
         type: custom

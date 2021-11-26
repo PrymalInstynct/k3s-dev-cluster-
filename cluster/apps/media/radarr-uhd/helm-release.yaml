@@ -44,9 +44,9 @@ spec:
           - hosts:
               - "radarr-uhd.${SECRET_DOMAIN}"
             secretName: "radarr-uhd-tls"
-    # podSecurityContext:
-    #   supplementalGroups:
-    #     - 100
+    podSecurityContext:
+      supplementalGroups:
+        - 100
     persistence:
       config:
         enabled: true
