@@ -4,7 +4,7 @@ metadata:
   name: dyndns-updater
   namespace: default
 data:
-  dyndns-updater.sh:: |
+  dyndns-updater.sh: |
     #!/bin/bash
 
     curl -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID" \
