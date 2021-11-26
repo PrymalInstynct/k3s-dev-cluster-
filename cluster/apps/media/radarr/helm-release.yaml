@@ -6,6 +6,9 @@ metadata:
   namespace: media
 spec:
   interval: 5m
+  dependsOn:
+    - name: nfs-provisioner
+      namespace: storage
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
@@ -45,6 +48,9 @@ spec:
       config:
         enabled: true
         existingClaim: radarr-config-v1
+    podSecurityContext:
+      supplementalGroups:
+        - 100
       media:
         enabled: true
         type: custom
