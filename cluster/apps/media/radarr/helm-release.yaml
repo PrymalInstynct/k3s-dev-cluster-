@@ -48,9 +48,9 @@ spec:
       config:
         enabled: true
         existingClaim: radarr-config-v1
-    podSecurityContext:
-      supplementalGroups:
-        - 100
+    # podSecurityContext:
+    #   supplementalGroups:
+    #     - 100
       media:
         enabled: true
         type: custom
