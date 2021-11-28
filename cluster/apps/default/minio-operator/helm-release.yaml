@@ -163,3 +163,5 @@ spec:
         ## This is applied to MinIO pods only.
         ## Refer Kubernetes documentation for details https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass/
         priorityClassName: ""
+        credsSecret:
+          name: storage-secret
