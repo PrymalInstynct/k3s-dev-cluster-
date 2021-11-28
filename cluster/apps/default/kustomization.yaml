@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - dyndns-updater
   - hajimari
-  - minio-operator
+  # - minio-operator
