@@ -6,7 +6,6 @@ resources:
   - media.yaml
   - metallb-system.yaml
   - minecraft.yaml
-  - minio-operator.yaml
   - networking.yaml
   - splunk-cluster-dev.yaml
   - splunk-standalone-dev.yaml
