@@ -5,7 +5,7 @@ resources:
   # - lidarr
   # - plex
   # - prowlarr
-  # - qbittorrent
+  - qbittorrent
   - radarr
   - radarr-uhd
   # - readarr
