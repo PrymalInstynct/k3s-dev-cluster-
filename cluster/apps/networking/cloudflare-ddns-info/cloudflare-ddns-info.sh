@@ -12,7 +12,7 @@ record4=$(curl -s -X GET \
 
 old_ip4=$(echo "$record4" | sed -n 's/.*"content":"\([^"]*\).*/\1/p')
 if [ "$ip4" = "$old_ip4" ]; then
-    printf "%s - Success - IP Address '%s' has not changed" "$(date -u)" "$ip4"
+    printf "%s - Success - IP Address '%s' has not changed for '%s'\n" "$(date -u)" "$ip4" "$CLOUDFLARE_RECORD_NAME"
     exit 0
 fi
 
@@ -26,9 +26,9 @@ update4=$(curl -s -X PUT \
 )
 
 if echo "$update4" | grep -q '\"success\":false'; then
-    printf "%s - Yikes - Updating IP Address '%s' has failed" "$(date -u)" "$ip4"
+    printf "%s - Yikes - Updating IP Address '%s' has failed for '%s'\n" "$(date -u)" "$ip4" "$CLOUDFLARE_RECORD_NAME"
     exit 1
 else
-    printf "%s - Success - IP Address '%s' has been updated" "$(date -u)" "$ip4"
+    printf "%s - Success - IP Address '%s' has been updated for '%s'\n" "$(date -u)" "$ip4" "$CLOUDFLARE_RECORD_NAME"
     exit 0
 fi
