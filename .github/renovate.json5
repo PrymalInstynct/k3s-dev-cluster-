@@ -67,7 +67,8 @@
     {
       "matchDatasources": ["helm"],
       "separateMinorPatch": true,
-      "ignoreDeprecated": true
+      "ignoreDeprecated": true,
+      "automerge": true
     },
     // global github-release datasource settings
     {
@@ -82,6 +83,7 @@
       "commitMessageTopic": "container image {{depName}}",
       "commitMessageExtra": "to {{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}",
       "matchUpdateTypes": ["major", "minor", "patch"],
+      "automerge": true
     },
     // add labels according to package and update types
     {
