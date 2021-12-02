@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   # - lidarr
   - plex
-  - prowlarr
+  # - prowlarr
   - qbittorrent
   - radarr
   - radarr-uhd
