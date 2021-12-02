@@ -6,10 +6,10 @@ resources:
   - plex
   - prowlarr
   - qbittorrent
-  - radarr
-  - radarr-uhd
+  # - radarr
+  # - radarr-uhd
   - readarr
   # - sabnzbd
   - sonarr
-  - sonarr-uhd
-  - tautulli
+  # - sonarr-uhd
+  # - tautulli
