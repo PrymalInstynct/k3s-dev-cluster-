@@ -7,7 +7,7 @@ metadata:
 spec:
   interval: 5m
   dependsOn:
-    - name: nfs-provisioner
+    - name: longhorn
       namespace: storage
   chart:
     spec:
@@ -25,6 +25,8 @@ spec:
       tag: v3.2.2.5080
     env:
       TZ: "America/Denver"
+    podSecurityContext:
+      fsGroup: 0
     ingress:
       main:
         enabled: true
@@ -44,9 +46,6 @@ spec:
           - hosts:
               - "radarr-uhd.${SECRET_DOMAIN}"
             secretName: "radarr-uhd-tls"
-    podSecurityContext:
-      supplementalGroups:
-        - 100
     persistence:
       config:
         enabled: true

@@ -6,6 +6,9 @@ metadata:
   namespace: media
 spec:
   interval: 5m
+  dependsOn:
+    - name: longhorn
+      namespace: storage
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
@@ -22,14 +25,18 @@ spec:
       tag: v1.0.0.2255
     env:
       TZ: "America/Denver"
+    podSecurityContext:
+      fsGroup: 0
     ingress:
       main:
         enabled: true
         ingressClassName: "traefik"
         annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
           hajimari.io/enable: "true"
           hajimari.io/icon: "music-box"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.middlewares: "networking-basic-auth@kubernetescrd"
         hosts:
           - host: "lidarr.${SECRET_DOMAIN}"
             paths:
@@ -38,9 +45,7 @@ spec:
         tls:
           - hosts:
               - "lidarr.${SECRET_DOMAIN}"
-    podSecurityContext:
-      supplementalGroups:
-        - 100
+            secretName: lidarr-tls
     persistence:
       config:
         enabled: true
