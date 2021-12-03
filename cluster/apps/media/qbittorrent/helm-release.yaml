@@ -5,7 +5,7 @@ metadata:
   name: qbittorrent
   namespace: media
 spec:
-  interval: 5m
+  interval: 6m
   dependsOn:
     - name: longhorn
       namespace: storage
