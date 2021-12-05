@@ -8,6 +8,7 @@ resources:
   # - media
   # - minecraft
   - networking
+  - productivity
   - system-upgrade
   # - splunk-cluster
   # - splunk-standalone
