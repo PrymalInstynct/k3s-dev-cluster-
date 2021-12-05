@@ -217,15 +217,6 @@ resource "cloudflare_record" "readarr" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "sabnzbd" {
-  name    = "sabnzbd"
-  zone_id = lookup(data.cloudflare_zones.domain.zones[0], "id")
-  value   = "ipv4.${data.sops_file.cloudflare_secrets.data["cloudflare_domain"]}"
-  proxied = true
-  type    = "CNAME"
-  ttl     = 1
-}
-
 resource "cloudflare_record" "sonarr" {
   name    = "sonarr"
   zone_id = lookup(data.cloudflare_zones.domain.zones[0], "id")
@@ -253,8 +244,17 @@ resource "cloudflare_record" "tautilli" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "minio" {
-  name    = "minio"
+resource "cloudflare_record" "focalboard" {
+  name    = "focalboard"
+  zone_id = lookup(data.cloudflare_zones.domain.zones[0], "id")
+  value   = "ipv4.${data.sops_file.cloudflare_secrets.data["cloudflare_domain"]}"
+  proxied = true
+  type    = "CNAME"
+  ttl     = 1
+}
+
+resource "cloudflare_record" "mealie" {
+  name    = "mealie"
   zone_id = lookup(data.cloudflare_zones.domain.zones[0], "id")
   value   = "ipv4.${data.sops_file.cloudflare_secrets.data["cloudflare_domain"]}"
   proxied = true
