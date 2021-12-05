@@ -68,3 +68,4 @@ spec:
         config:
           enabled: true
           existingClaim: mealie-db-v1
+          storageClass: longhorn-retain
