@@ -25,6 +25,7 @@ spec:
       tag: v1.25.0.5282-2edd3c44d
     env:
       TZ: "America/Denver"
+      ADVERTISE_IP: "http://${SVC_PLEX_ADDR}:32400/,https://plex.${SECRET_DOMAIN}"
     podSecurityContext:
       fsGroup: 0
     service:
