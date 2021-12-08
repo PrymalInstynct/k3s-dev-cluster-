@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: unpackerr
+  name: tautulli
   namespace: media
 spec:
   interval: 5m
@@ -12,8 +12,8 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: unpackerr
-      version: 5.1.0
+      chart: tautulli
+      version: 11.1.1
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -21,21 +21,34 @@ spec:
       interval: 5m
   values:
     image:
-      repository: golift/unpackerr
-      tag: 0.9.7
+      repository: ghcr.io/k8s-at-home/tautulli
+      tag: v2.7.7
     env:
       TZ: "America/Denver"
     podSecurityContext:
       fsGroup: 0
-    persistence:
-      downloads:
+    ingress:
+      main:
         enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: "${NAS_ADDR}"
-            path: /volume1/data/media/downloads
-        mountPath: /downloads
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "chart-bar"
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        hosts:
+          - host: "tautulli.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "tautulli.${SECRET_DOMAIN}"
+            secretName: tautulli-tls
+    persistence:
+      config:
+        enabled: true
+        existingClaim: tautulli-config-v1
     resources:
       requests:
         memory: 250Mi
