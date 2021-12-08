@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - cloudflare-ddns
   - cloudflare-ddns-info
-  - traefik
+  # - traefik
