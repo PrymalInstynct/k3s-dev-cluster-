@@ -5,7 +5,7 @@ resources:
   - storage
   - default
   - kube-system
-  - media
+  # - media
   # - minecraft
   - networking
   # - productivity
