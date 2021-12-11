@@ -55,3 +55,10 @@ spec:
         cpu: 500m
       limits:
         memory: 1500Mi
+    # volumes:
+    #   - name: focalboard-config
+    #     configMap:
+    #       name: focalboard-config
+    #       items:
+    #         - key: data
+    #           path: config.json
