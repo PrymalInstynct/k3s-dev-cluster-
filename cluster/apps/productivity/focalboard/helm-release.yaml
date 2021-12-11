@@ -8,12 +8,12 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      # renovate: registryUrl=https://helm.mattermost.com
       chart: focalboard
-      version: 4.1.0
+      version: 0.4.0
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: mattermost-charts
         namespace: flux-system
       interval: 5m
   dependsOn:
@@ -41,6 +41,9 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+                backend:
+                  serviceName: focalboard
+                  servicePort: 80
         tls:
           - hosts:
               - "focalboard.${SECRET_DOMAIN}"
@@ -55,20 +58,3 @@ spec:
         cpu: 500m
       limits:
         memory: 1500Mi
-    config: |
-        {
-            "serverRoot": "http://localhost:8000",
-            "port": 8000,
-            "dbtype": "postgres",
-            "dbconfig": "postgres://${SECRET_FOCALBOARD_USERNAME}:${SECRET_FOCALBOARD_PASSWORD}@focalboard-db/boards?sslmode=disable&connect_timeout=10",
-            "postgres_dbconfig": "dbname=boards sslmode=disable",
-            "useSSL": false,
-            "webpath": "/webapp/pack",
-            "filespath": "/data/files",
-            "telemetry": false,
-            "session_expire_time": 2592000,
-            "session_refresh_time": 18000,
-            "localOnly": false,
-            "enableLocalMode": true,
-            "localModeSocketLocation": "/var/tmp/focalboard_local.socket"
-        }
