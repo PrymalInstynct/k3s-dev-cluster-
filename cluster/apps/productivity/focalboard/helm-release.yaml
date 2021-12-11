@@ -6,7 +6,6 @@ metadata:
   namespace: productivity
 spec:
   interval: 5m
-  enableServiceLinks: false
   chart:
     spec:
       # renovate: registryUrl=https://helm.mattermost.com
@@ -21,6 +20,7 @@ spec:
     - name: longhorn
       namespace: storage
   values:
+    enableServiceLinks: false
     image:
       repository: mattermost/focalboard
       pullPolicy: IfNotPresent
