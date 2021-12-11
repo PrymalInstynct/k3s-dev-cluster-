@@ -46,9 +46,9 @@ spec:
               - "focalboard.${SECRET_DOMAIN}"
             secretName: focalboard-tls
     persistence:
-      config:
+      data:
         enabled: true
-        existingClaim: focalboard-config-v1
+        existingClaim: focalboard-data-v1
     resources:
       requests:
         memory: 250Mi

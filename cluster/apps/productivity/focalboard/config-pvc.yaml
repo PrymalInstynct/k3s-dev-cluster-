@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: focalboard-config-v1
+  name: focalboard-data-v1
   namespace: productivity
 spec:
   accessModes:
