@@ -73,4 +73,5 @@ spec:
         "localOnly": false,
         "enableLocalMode": true,
         "localModeSocketLocation": "/var/tmp/focalboard_local.socket"
+        "enablepublicsharedboards": true
       }
