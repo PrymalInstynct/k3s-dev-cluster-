@@ -18,7 +18,7 @@ spec:
       interval: 5m
   dependsOn:
     - name: longhorn
-      namespace: storage
+      namespace: longhorn-system
   values:
     image:
       repository: hkotel/mealie

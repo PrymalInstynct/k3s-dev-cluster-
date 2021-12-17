@@ -18,5 +18,5 @@ spec:
       interval: 5m
   dependsOn:
     - name: longhorn
-      namespace: storage
+      namespace: longhorn-system
   values:
