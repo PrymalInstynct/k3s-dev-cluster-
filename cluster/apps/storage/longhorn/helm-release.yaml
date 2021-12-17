@@ -3,9 +3,9 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: longhorn
-  namespace: storage
+  namespace: longhorn-system
 spec:
-  interval: 4m
+  interval: 5m
   chart:
     spec:
       # renovate: registryUrl=https://charts.longhorn.io
@@ -17,6 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    persistence:
+      defaultClass: false
     ingress:
       enabled: true
       ingressClassName: "traefik"
@@ -30,4 +32,3 @@ spec:
         hajimari.io/icon: "database"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "networking-basic-auth@kubernetescrd"
-    namespaceOverride: "storage"

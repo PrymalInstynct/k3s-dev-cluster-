@@ -30,7 +30,7 @@ spec:
       reclaimPolicy: retain
     storageClass:
       create: true
-      defaultClass: false
+      defaultClass: true
       name: nfs-client
       allowVolumeExpansion: false
       reclaimPolicy: Retain
