@@ -22,7 +22,7 @@ spec:
   values:
     image:
       repository: golift/unpackerr
-      tag: 0.9.8
+      tag: 0.9.9
     env:
       TZ: "America/Denver"
       # Sonarr Config
