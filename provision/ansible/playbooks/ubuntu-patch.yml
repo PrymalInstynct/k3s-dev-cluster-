@@ -1,0 +1,22 @@
+---
+- hosts:
+    - master
+    - worker
+  become: true
+  gather_facts: true
+  any_errors_fatal: true
+  tasks:
+
+  - name: Update Ubuntu Apt Cache
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600
+    when: ansible_os_family == "Debian"
+
+  - name: Update all Ubuntu packages to latest version
+    ansible.builtin.apt:
+      name: "*"
+      state: latest
+      autoclean: yes
+      autoremove: yes
+    when: ansible_os_family == "Debian"
