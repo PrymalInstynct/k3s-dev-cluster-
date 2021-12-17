@@ -18,30 +18,11 @@ spec:
       interval: 5m
   values:
     ingress:
-      ## Set to true to enable ingress record generation
       enabled: true
-
-      ## Add ingressClassName to the Ingress
-      ## Can replace the kubernetes.io/ingress.class annotation on v1.18+
       ingressClassName: "traefik"
-
       host: "longhorn.${SECRET_DOMAIN}"
-
-      ## Set this to true in order to enable TLS on the ingress record
-      ## A side effect of this will be that the backend service will be connected at port 443
       tls: true
-
-      ## If TLS is set to true, you must declare what secret will store the key/certificate for TLS
       tlsSecret: longhorn-tls
-
-      ## Ingress annotations done as key:value pairs
-      ## If you're using kube-lego, you will want to add:
-      ## kubernetes.io/tls-acme: true
-      ##
-      ## For a full list of possible ingress annotations, please see
-      ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/annotations.md
-      ##
-      ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-production"
         hajimari.io/appName: "longhorn"
@@ -49,21 +30,4 @@ spec:
         hajimari.io/icon: "database"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "networking-basic-auth@kubernetescrd"
-
-      secrets:
-      ## If you're providing your own certificates, please use this to add the certificates as secrets
-      ## key and certificate should start with -----BEGIN CERTIFICATE----- or
-      ## -----BEGIN RSA PRIVATE KEY-----
-      ##
-      ## name should line up with a tlsSecret set further up
-      ## If you're using kube-lego, this is unneeded, as it will create the secret for you if it is not set
-      ##
-      ## It is also possible to create and manage the certificates outside of this helm chart
-      ## Please see README.md for more information
-      # - name: longhorn.local-tls
-      #   key:
-      #   certificate:
-
-    ## Specify override namespace, specifically this is useful for using longhorn as sub-chart
-    ## and its release namespace is not the `longhorn-system`
     namespaceOverride: "storage"
