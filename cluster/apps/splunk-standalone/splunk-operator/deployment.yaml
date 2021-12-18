@@ -17,7 +17,7 @@ spec:
       serviceAccountName: splunk-operator
       containers:
       - name: splunk-operator
-        image: docker.io/splunk/splunk-operator:1.0.4
+        image: docker.io/splunk/splunk-operator:1.0.5
         imagePullPolicy: IfNotPresent
         env:
         - name: WATCH_NAMESPACE
