@@ -37,10 +37,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.middlewares: "networking-basic-auth@kubernetescrd"
         hosts:
-          - host: "thanos.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                pathType: Prefix
+          - "thanos.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - "thanos.${SECRET_DOMAIN}"
