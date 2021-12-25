@@ -4,8 +4,8 @@ kind: Kustomization
 resources:
   # - elasticsearch
   # - grafana
-  - kube-prometheus-stack
+  # - kube-prometheus-stack
   # - loki
   # - promtail
-  - thanos
+  # - thanos
   - uptime-kuma
