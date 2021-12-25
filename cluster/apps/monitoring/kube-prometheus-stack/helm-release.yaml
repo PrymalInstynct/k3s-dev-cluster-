@@ -215,48 +215,9 @@ spec:
             name: thanos-objstore
             key: objstore.yml
         additionalScrapeConfigs:
-          - job_name: cadvisor
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "expanse:8005"
-          - job_name: coredns
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "opnsense:9153"
           - job_name: minio
             honor_timestamps: true
             metrics_path: /minio/v2/metrics/cluster
             static_configs:
               - targets:
-                  - "expanse:9000"
-          - job_name: node-exporter
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "opnsense:9100"
-                  - "expanse:9100"
-                  - "valetudo:9100"
-                  - "pikvm:9100"
-          - job_name: postgresql
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "expanse:9187"
-          - job_name: vault
-            metrics_path: /v1/sys/metrics
-            params:
-              format:
-                - prometheus
-            static_configs:
-              - targets:
-                  - "expanse:8200"
-          - job_name: pikvm
-            metrics_path: /api/export/prometheus/metrics
-            basic_auth:
-              username: admin
-              password: admin
-            static_configs:
-              - targets:
-                  - "pikvm.${SECRET_PRIVATE_DOMAIN}"
+                  - "scorpion.${SECRET_INTERNAL_DOMAIN}:9000"
