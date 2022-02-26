@@ -23,7 +23,7 @@ spec:
     image:
       repository: louislam/uptime-kuma
       pullPolicy: IfNotPresent
-      tag: 1.11.4
+      tag: 1.12.1
     podSecurityContext:
       fsGroup: 0
     ingress:
