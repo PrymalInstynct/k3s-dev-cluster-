@@ -21,7 +21,7 @@ spec:
 
     image:
       repository: rancher/local-path-provisioner
-      tag: v0.0.21
+      tag: v0.0.22
       pullPolicy: IfNotPresent
 
     helperImage:
